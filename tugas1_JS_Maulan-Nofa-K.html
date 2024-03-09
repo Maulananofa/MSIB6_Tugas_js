@@ -1,0 +1,87 @@
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  h2.text-center {
+    text-align: center;
+    color: #00ccff;
+  }
+  .table-center {
+    margin: 0 auto;
+    width: 80%;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    padding: 8px;
+    text-align: center;
+  }
+  th {
+    background-color: #2e0afa;
+    color: white;
+  }
+</style>
+
+<script>
+  let Pegawai ="Ridwan";
+  let Jabatan ="Staff";
+  let status  ="Menikah";
+
+  let gajipkk =0;
+  switch (Jabatan) {
+    case 'Manager':
+      gajipkk =15000000;
+      break;
+    case 'Asisten Manager':
+      gajipkk =10000000;
+      break;
+    case 'Staff':
+      gajipkk =5000000;
+      break;
+    default:
+      gajipkk =0;
+  }
+
+  let Tunjanganjbt=gajipkk * 0.15;
+  let bpjs =gajipkk * 0.1;
+
+  let Tunjanganklg= (status === 'Menikah') ? 0.20 * gajipkk : 0;;
+
+  let totalgaji =gajipkk +Tunjanganjbt +bpjs +Tunjanganklg;
+
+  document.write("<h2 class='text-center'>Data Pegawai</h2>");
+    document.write("<div class='table-center'><table border='1' cellpadding='10px' >");
+    document.write("<thead>");
+    document.write("<tr>");
+    document.write("<th>Nama Pegawai</th>");
+    document.write("<th>Jabatan</th>");
+    document.write("<th>Status</th>");
+    document.write("<th>Gaji Pokok</th>");
+    document.write("<th>Tunjangan Jabatan</th>");
+    document.write("<th>BPJS</th>");
+    document.write("<th>Tunjangan Keluarga</th>");
+    document.write("<th>Total Gaji</th>");
+    document.write("</tr>");
+    document.write("</thead>");
+    document.write("<tbody>");
+    document.write("<tr>");
+    document.write("<td>" + Pegawai + "</td>");
+    document.write("<td>" + Jabatan + "</td>");
+    document.write("<td>" + status + "</td>");
+    document.write("<td>" + gajipkk + "</td>");
+    document.write("<td>" + Tunjanganjbt + "</td>");
+    document.write("<td>" + bpjs + "</td>");
+    document.write("<td>" + Tunjanganklg + "</td>");
+    document.write("<td>" + totalgaji + "</td>");
+    document.write("</tr>");
+    document.write("</tbody>");
+    document.write("<tfoot>");
+    document.write("<tr>");
+    document.write("<td colspan='7'>Total Gaji</td>");
+    document.write("<td>" + totalgaji + "</td>");
+    document.write("</tr>");
+    document.write("</tfoot>");
+    document.write("</table></div>");
+</script>
