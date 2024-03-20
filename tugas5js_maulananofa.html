@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Event Handler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="div1">
+    Kucing
+    <audio id="cat" src="cat.mp3"></audio>
+</div>
+<div id="div2">
+    Jalak bali
+    <audio id="jalakbali" src="jalakbali.mp3"></audio>
+</div>
+<div id="div3">
+    Hewan kelinci
+    <audio id="kelinci" src="kelinci.mp3"></audio>
+</div>
+
+<script src="jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#div1").mouseover(function(){
+            $(this).css({
+                background: "url('https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/294/2023/12/14/HopsDes9-3454616980.png')",
+            });
+            document.getElementById("cat").play(); 
+        });
+        
+        $("#div1").mouseout(function(){
+            $(this).css({
+                background: "aqua"
+            });
+            document.getElementById("cat").pause();
+            document.getElementById("cat").currentTime = 0; 
+        });
+        
+        $("#div2").mouseover(function(){
+            $(this).css({
+                background: "url('https://www.greeners.co/wp-content/uploads/2016/09/Burung-jalak-Bali-2.jpg')",
+            });
+            document.getElementById("jalakbali").play(); 
+        });
+        
+        $("#div2").mouseout(function(){
+            $(this).css({
+                background: "pink"
+            });
+            document.getElementById("jalakbali").pause();
+            document.getElementById("jalakbali").currentTime = 0; 
+        });
+        $("#div3").mouseover(function(){
+            $(this).css({
+                background: "url('https://cdn0-production-images-kly.akamaized.net/G4aHigoqLmt2YGibsdOYZJNanQU=/800x450/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3062948/original/096624100_1582864559-rabbit-2174679_1920.jpg')",
+            });
+            document.getElementById("kelinci").play(); 
+        });
+        
+        $("#div3").mouseout(function(){
+            $(this).css({
+                background: "white"
+            });
+            document.getElementById("kelinci").pause();
+            document.getElementById("kelinci").currentTime = 0; 
+        });
+    });
+</script>
+</body>
+</html>
