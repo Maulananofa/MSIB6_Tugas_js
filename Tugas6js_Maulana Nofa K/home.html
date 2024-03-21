@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Sederhana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Selamat Datang My Website</h1>
+        <p>Silahkan Isikan Nama Lengkap Selengkap-Lengkapnya</p>
+        <p>Di Bawah Ini Ya.......</p>
+        <input type="text" id="guessInput">
+        <button onclick="checkGuess()">Simpan</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+
+        function checkGuess() {
+            const pilih = parseInt(document.getElementById('guessInput').value);
+            if (isNaN(pilih) || pilih < 1 || pilih > 100) {
+                setMessage('Masukkan Pilihannya Dong....');
+                return;
+            }
+
+            attempts++;
+
+            if (pilih === randomNumber) {
+                setMessage(`Selamat Karena Telah Berhasil Menebak Nomernya.... ${randomNumber} correctly in ${attempts} attempts.`);
+            } else if (pilih < randomNumber) {
+                setMessage('Salah Bro, Pilihannya Terlalu Sedikit...');
+            } else {
+                setMessage('Kebanyakan Bro...');
+            }
+        }
+
+        function setMessage(msg) {
+            document.getElementById('message').textContent = msg;
+        }
+    </script>
+</body>
+</html>
